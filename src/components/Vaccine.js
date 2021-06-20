@@ -16,8 +16,11 @@ class Vaccine extends React.Component {
     componentDidMount() {
         // const PINCODE = ['383440']
         const PINCODE = ['383410', '383430', '383440']
+        let date = new Date()
+        date = date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear();      
+
         PINCODE.forEach(pin => {
-            fetch(`https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=${pin}&date=21-06-2021`)
+            fetch(`https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=${pin}&date=${date}`)
             .then(response => response.json())
             .then(data => {
                 this.setState({
