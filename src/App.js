@@ -1,6 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import Vaccine from './components/Vaccine';
+import Test from './components/Test';
 
 function App() {
   return (

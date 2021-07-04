@@ -4,7 +4,7 @@ import {useEffect, useState} from 'react';
 import '../App.css'
 import { render } from '@testing-library/react';
 
-const Vaccine = () => {
+const Test = () => {
     const [query, setQuery] = useState("");
     const [pincode, setPincode] = useState("383430");
     const [items, setItems] = useState([]);
@@ -34,8 +34,11 @@ const Vaccine = () => {
             <div className="App">           
                 <form onSubmit={(e => {e.preventDefault();setPincode(query);})}>
                     <input type="text" name="query" onInput={(e => {setQuery(e.target.value)})}/>
-                    <button type="submit" name="Search" value="Search">Search By Pincode</button>
+                    <button type="submit" name="Search" value="Search"/>
                 </form>
+    
+                <button onClick={() => setPincode("383410")}>383410</button>
+                <button onClick={() => setPincode("383430")}>383430</button>
 
                 <div>
                     <ul>
@@ -57,4 +60,4 @@ const Vaccine = () => {
     }
 } 
 
-export default Vaccine;
+export default Test;
