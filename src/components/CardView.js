@@ -2,8 +2,6 @@ import React from 'react';
 
 function CardView(props){
     let data = props.item
-    console.log('card')
-    console.log(data)
   
     return(
         <div className="main-container">
