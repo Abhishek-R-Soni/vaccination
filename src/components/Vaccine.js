@@ -1,8 +1,12 @@
-import CardView from './CardView';
 import React from 'react'
+import ReactDOM from 'react-dom';
 import {useEffect, useState} from 'react';
+import { Empty } from 'antd';
+import { v4 as uuidv4 } from 'uuid';
+import CardView from './CardView';
+import CustomSelect from './CustomSelect';
 import '../App.css'
-import { render } from '@testing-library/react';
+import 'antd/dist/antd.css';
 
 const Vaccine = () => {
     const [query, setQuery] = useState("");
@@ -10,15 +14,20 @@ const Vaccine = () => {
     const [items, setItems] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false)
 
+    // const options = [
+    //     {label:"383410 - Goral", value:"383410"},
+    //     {label:"383430 - Idar", value:"383430"},
+    //     {label:"383440 - Kadiyadara", value:"383440"}
+    // ]
+    
     useEffect(() => {
-        console.log('component did mount')
         let date = new Date()
         date = date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear();      
 
         fetch(`https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=${pincode}&date=${date}`)
         .then(res => res.json())
         .then(res => {
-            console.log("Fetching...")
+            console.log("Vaccine Data Fetching...")
             console.log(res["sessions"])
             setItems(res["sessions"])
             setIsLoaded(true)
@@ -28,30 +37,67 @@ const Vaccine = () => {
         })
     }, [pincode]);
 
-   
-    if(isLoaded){
-        return (
-            <div className="App">           
-                <form onSubmit={(e => {e.preventDefault();setPincode(query);})}>
-                    <input type="text" name="query" onInput={(e => {setQuery(e.target.value)})}/>
-                    <button type="submit" name="Search" value="Search">Search By Pincode</button>
-                </form>
+    // const onPincodeChange = (pincode) => {
+    //     console.log("OnPinCha", pincode.value)
+    //     setPincode(pincode.value)
+    // }
 
+    if(isLoaded){
+        if(items === undefined || items.length === 0){
+            return (
                 <div>
-                    <ul>
-                        {items.map(item => {
-                            return <CardView item={item}/>
-                            })
-                        }
-                    </ul>
+                    <h1 className="title">Sabarkantha Vaccination Drive</h1>
+                    <nav className="navbar navbar-light">
+                        <div className="container-fluid">
+                            <h1 className="navbar-brand">Search by Pincode</h1>
+                            <form className="d-flex" onSubmit={(e => {e.preventDefault();setPincode(query)})}>
+                            <input className="form-control me-2" type="number" placeholder="Pincode" aria-label="Search" onInput={(e => {setQuery(e.target.value)})}/>
+                            <button className="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                        </div>
+                    </nav>
+                    <div className="center">
+                        <Empty />
+                    </div>
                 </div>
-            </div>
-        );
+            )
+        }
+        else{
+            return (
+                <div className="root">
+                    <div className="header">
+                        <h1 className="title">Sabarkantha Vaccination Drive</h1>
+                        <nav className="navbar navbar-light">
+                            <div className="container-fluid">
+                                <h1 className="navbar-brand">Search by Pincode</h1>
+                                <form className="d-flex" onSubmit={(e => {e.preventDefault();setPincode(query)})}>
+                                <input className="form-control me-2" type="number" placeholder="Pincode" aria-label="Search" onInput={(e => {setQuery(e.target.value)})}/>
+                                <button className="btn btn-outline-success" type="submit">Search</button>
+                                </form>
+                            </div>
+                        </nav>
+                    </div>
+                    <div>
+                        {/* <CustomSelect options={options} label="" onChange={onPincodeChange}/> */}
+                    </div>
+                    <div className="App">           
+                        <div>
+                            <ul>
+                                {items.map(item => {
+                                    return <CardView key={uuidv4()} item={item}/>
+                                    })
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
     }
     else{
         return(
-            <div>
-                <h1>Loading...</h1>
+            <div className="center">
+                <Empty />
             </div>
         )
     }
