@@ -10,7 +10,7 @@ import 'antd/dist/antd.css';
 
 const Vaccine = () => {
     const [query, setQuery] = useState("");
-    const [pincode, setPincode] = useState("383410");
+    const [pincode, setPincode] = useState("383430");
     const [items, setItems] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false)
 
@@ -21,14 +21,13 @@ const Vaccine = () => {
     // ]
     
     useEffect(() => {
-        console.log('component did mount')
         let date = new Date()
         date = date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear();      
 
         fetch(`https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=${pincode}&date=${date}`)
         .then(res => res.json())
         .then(res => {
-            console.log("Fetching...")
+            console.log("Vaccine Data Fetching...")
             console.log(res["sessions"])
             setItems(res["sessions"])
             setIsLoaded(true)
