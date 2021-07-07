@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {useEffect, useState} from 'react';
 import { Empty } from 'antd';
 import { v4 as uuidv4 } from 'uuid';
+import {Helmet} from 'react-helmet';
 import CardView from './CardView';
 import CustomSelect from './CustomSelect';
 import '../App.css'
@@ -47,6 +48,11 @@ const Vaccine = () => {
         if(items === undefined || items.length === 0){
             return (
                 <div>
+                    <Helmet>
+                        <meta charSet="utf-8" />
+                        <title>Sabarkantha Vaccination Drive</title>
+                        <link rel="canonical" href="https://sabarkantha-vaccination-drive.herokuapp.com/" />
+                    </Helmet>
                     <h1 className="title">Sabarkantha Vaccination Drive</h1>
                     <nav className="navbar navbar-light">
                         <div className="container-fluid">
@@ -69,6 +75,11 @@ const Vaccine = () => {
         else{
             return (
                 <div className="root">
+                    <Helmet>
+                        <meta charSet="utf-8" />
+                        <title>Sabarkantha Vaccination Drive</title>
+                        <link rel="canonical" href="https://sabarkantha-vaccination-drive.herokuapp.com/" />
+                    </Helmet>
                     <div className="header">
                         <h1 className="title">Sabarkantha Vaccination Drive</h1>
                         <nav className="navbar navbar-light">
