@@ -27,9 +27,10 @@ const Vaccine = () => {
         fetch(`https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=${pincode}&date=${date}`)
         .then(res => res.json())
         .then(res => {
-            console.log("Vaccine Data Fetching...")
+            console.log(`Fetching Vaccine Data for ${pincode}...`)
             console.log(res["sessions"])
             setItems(res["sessions"])
+            console.log(items.length)
             setIsLoaded(true)
         })
         .catch((error) => {
@@ -58,6 +59,9 @@ const Vaccine = () => {
                     </nav>
                     <div className="center">
                         <Empty />
+                    </div>
+                    <div className="error-msg">
+                        <h5>No vaccination center is available for booking at {pincode},<p> Visit again after sometime.</p></h5>
                     </div>
                 </div>
             )
