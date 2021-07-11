@@ -50,10 +50,10 @@ const Vaccine = () => {
                 <div>
                     <Helmet>
                         <meta charSet="utf-8" />
-                        <title>Sabarkantha Vaccination Drive</title>
+                        <title>India's Vaccination Drive</title>
                         <link rel="canonical" href="https://sabarkantha-vaccination-drive.herokuapp.com/" />
                     </Helmet>
-                    <h1 className="title">Sabarkantha Vaccination Drive</h1>
+                    <h1 className="title">India's Vaccination Drive</h1>
                     <nav className="navbar navbar-light">
                         <div className="container-fluid">
                             <h1 className="navbar-brand">Search by Pincode</h1>
@@ -77,11 +77,11 @@ const Vaccine = () => {
                 <div className="root">
                     <Helmet>
                         <meta charSet="utf-8" />
-                        <title>Sabarkantha Vaccination Drive</title>
+                        <title>India's Vaccination Drive</title>
                         <link rel="canonical" href="https://sabarkantha-vaccination-drive.herokuapp.com/" />
                     </Helmet>
                     <div className="header">
-                        <h1 className="title">Sabarkantha Vaccination Drive</h1>
+                        <h1 className="title">India's Vaccination Drive</h1>
                         <nav className="navbar navbar-light">
                             <div className="container-fluid">
                                 <h1 className="navbar-brand">Search by Pincode</h1>
