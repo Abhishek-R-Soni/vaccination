@@ -74,6 +74,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 This app helps people to check the vaccine availability near by location using pincode.
 
+### App link
+https://covid19-vaccination-drive.vercel.app/
+
 ### Some glimps of app
 
 1. Home Page
