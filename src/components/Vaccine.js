@@ -50,10 +50,10 @@ const Vaccine = () => {
                 <div>
                     <Helmet>
                         <meta charSet="utf-8" />
-                        <title>India's Vaccination Drive</title>
-                        <link rel="canonical" href="https://sabarkantha-vaccination-drive.herokuapp.com/" />
+                        <title>Covid-19 Vaccination Drive</title>
+                        <link rel="canonical" href="https://covid19-vaccination-drive.vercel.app/" />
                     </Helmet>
-                    <h1 className="title">India's Vaccination Drive</h1>
+                    <h1 className="title">Covid-19 Vaccination Drive</h1>
                     <nav className="navbar navbar-light">
                         <div className="container-fluid">
                             <h1 className="navbar-brand">Search by Pincode</h1>
@@ -77,11 +77,11 @@ const Vaccine = () => {
                 <div className="root">
                     <Helmet>
                         <meta charSet="utf-8" />
-                        <title>India's Vaccination Drive</title>
-                        <link rel="canonical" href="https://sabarkantha-vaccination-drive.herokuapp.com/" />
+                        <title>Covid-19 Vaccination Drive</title>
+                        <link rel="canonical" href="https://covid19-vaccination-drive.vercel.app/" />
                     </Helmet>
                     <div className="header">
-                        <h1 className="title">India's Vaccination Drive</h1>
+                        <h1 className="title">Covid-19 Vaccination Drive</h1>
                         <nav className="navbar navbar-light">
                             <div className="container-fluid">
                                 <h1 className="navbar-brand">Search by Pincode</h1>
