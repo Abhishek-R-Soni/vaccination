@@ -68,4 +68,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# vaccination
+
+
+### Covid19 Vaccination Drive App
+
+This app helps people to check the vaccine availability near by location using pincode.
+
+### Some glimps of app
+
+1. Home Page
+![image](https://user-images.githubusercontent.com/44438237/125183253-a803de00-e232-11eb-9a71-341cc07d14e0.png)
+
+2. No Vaccination Page
+![image](https://user-images.githubusercontent.com/44438237/125183259-bbaf4480-e232-11eb-884c-2d5114dc7747.png)
